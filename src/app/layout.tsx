@@ -65,6 +65,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://crmdevelopment.in",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -73,6 +85,14 @@ export const metadata: Metadata = {
     title: "CRM Development Services | Custom Enterprise CRM Software",
     description:
       "Award-winning custom CRM development company. 100% code ownership, zero monthly per-seat fees, tailored for high-growth enterprises.",
+    images: [
+      {
+        url: "https://crmdevelopment.in/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: "crmdevelopment.in Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -80,6 +100,7 @@ export const metadata: Metadata = {
     description:
       "Bespoke CRM software development with AI automation, data migration, and zero recurring user fees.",
     creator: "@crmdevelopment_in",
+    images: ["https://crmdevelopment.in/icon-512.png"],
   },
 };
 
@@ -191,6 +212,13 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
       <head>
+        {/* Favicons for Browsers & Google Search Crawler */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
         {/* Structured Data Script Tags for Search Engines */}
         <script
           type="application/ld+json"
