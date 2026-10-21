@@ -1,0 +1,21 @@
+{
+  "name": "crmdevelopment.in - Custom CRM Development",
+  "short_name": "CRM Development",
+  "description": "India's premier custom CRM software development agency. Bespoke architecture, AI automation, and zero recurring user fees.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff6b1e",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

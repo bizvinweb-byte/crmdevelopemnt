@@ -99,30 +99,31 @@ export const metadata: Metadata = {
       { url: "/apple-touch-icon.png?v=3", sizes: "180x180", type: "image/png" },
     ],
   },
+  manifest: "/manifest.json",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://crmdevelopment.in",
     siteName: "crmdevelopment.in",
-    title: "CRM Development Services | Custom Enterprise CRM Software",
+    title: "Custom CRM Development Company India | Bespoke Enterprise Software",
     description:
-      "Award-winning custom CRM development company. 100% code ownership, zero monthly per-seat fees, tailored for high-growth enterprises.",
+      "India's leading bespoke CRM software developers. 100% intellectual property ownership, zero recurring user licenses, AI sales automation & enterprise cloud integrations.",
     images: [
       {
-        url: "https://crmdevelopment.in/icon-512.png",
-        width: 512,
-        height: 512,
-        alt: "crmdevelopment.in Logo",
+        url: "https://crmdevelopment.in/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Custom CRM Development Company India - crmdevelopment.in",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CRM Development Solutions - crmdevelopment.in",
+    title: "Custom CRM Development Company India - crmdevelopment.in",
     description:
       "Bespoke CRM software development with AI automation, data migration, and zero recurring user fees.",
     creator: "@crmdevelopment_in",
-    images: ["https://crmdevelopment.in/icon-512.png"],
+    images: ["https://crmdevelopment.in/og-image.png"],
   },
 };
 
@@ -267,6 +268,36 @@ export default function RootLayout({
     ],
   };
 
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "crmdevelopment.in Custom CRM Software Platform",
+    operatingSystem: "Web, Cloud, iOS, Android, Windows, macOS",
+    applicationCategory: "BusinessApplication",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      ratingCount: "148",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "300000",
+      priceCurrency: "INR",
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/InStock",
+    },
+    featureList: [
+      "Custom Lead Qualification & Scoring Pipelines",
+      "AI Smart Automation & Predictive Deal Routing",
+      "Multi-Channel WhatsApp, VoIP & Email Telephony Sync",
+      "Granular Role-Based Access Control (RBAC)",
+      "Zero Monthly Per-Seat Licensing Fees",
+      "100% Perpetual Source Code & Database Ownership",
+    ],
+  };
+
   return (
     <html
       lang="en"
@@ -293,6 +324,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
         />
         <script
           type="application/ld+json"
