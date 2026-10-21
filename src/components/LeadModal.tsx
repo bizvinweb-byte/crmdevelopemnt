@@ -15,7 +15,8 @@ import {
   CheckCircle2, 
   ShieldCheck, 
   Clock, 
-  Loader2 
+  Loader2,
+  Download 
 } from "lucide-react";
 
 export default function LeadModal() {
@@ -92,6 +93,17 @@ export default function LeadModal() {
 
       if (response.ok && result.success) {
         setIsSuccess(true);
+        // Automatically trigger brochure download
+        try {
+          const downloadLink = document.createElement("a");
+          downloadLink.href = "/brandmingo-brochure-2026.pdf";
+          downloadLink.download = "Brandmingo-CRM-Brochure-2026.pdf";
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+        } catch (downloadErr) {
+          console.error("Auto-download failed:", downloadErr);
+        }
       } else {
         setErrorMessage(result.error || "Unable to send your request. Please try again.");
       }
@@ -158,6 +170,27 @@ export default function LeadModal() {
               <p className="text-xs sm:text-sm text-slate-600 mt-1.5 max-w-sm mx-auto leading-relaxed">
                 Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. A Senior Technical CRM Consultant will review your scope and contact you within <span className="font-bold text-[#ff6b1e]">15 minutes</span>.
               </p>
+            </div>
+
+            {/* Brochure Auto-Download Banner */}
+            <div className="bg-gradient-to-r from-orange-50 to-[#fff5ef] rounded-xl p-3 border border-orange-200 text-left flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-[#ff6b1e] text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <Download className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-slate-900">Brochure Downloaded!</p>
+                  <p className="text-[11px] text-slate-500">Didn&apos;t download automatically?</p>
+                </div>
+              </div>
+              <a
+                href="/brandmingo-brochure-2026.pdf"
+                download="Brandmingo-CRM-Brochure-2026.pdf"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#ff6b1e] text-[#ff6b1e] text-xs font-bold hover:bg-[#ff6b1e] hover:text-white transition-all shadow-xs whitespace-nowrap"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Download PDF</span>
+              </a>
             </div>
 
             <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-200/80 text-left space-y-1.5">

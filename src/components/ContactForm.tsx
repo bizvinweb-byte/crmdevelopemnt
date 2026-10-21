@@ -10,7 +10,8 @@ import {
   Mail, 
   Phone, 
   Building,
-  Sparkles
+  Sparkles,
+  Download
 } from "lucide-react";
 
 export default function ContactForm() {
@@ -44,6 +45,17 @@ export default function ContactForm() {
           source: "Contact Page Dedicated Form",
         }),
       });
+      // Automatically trigger brochure download
+      try {
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "/brandmingo-brochure-2026.pdf";
+        downloadLink.download = "Brandmingo-CRM-Brochure-2026.pdf";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+      } catch (downloadErr) {
+        console.error("Auto-download failed:", downloadErr);
+      }
       setSubmitted(true);
     } catch (err) {
       console.error("Contact form submit error:", err);
@@ -160,6 +172,27 @@ export default function ContactForm() {
                 <p className="text-slate-600 text-sm max-w-md mx-auto mb-6">
                   Thank you for reaching out to <strong className="text-slate-900">crmdevelopment.in</strong>. A Principal CRM Architect will review your requirements and contact you within 2 hours.
                 </p>
+
+                {/* Brochure Auto Download Notification */}
+                <div className="max-w-md mx-auto mb-6 bg-gradient-to-r from-orange-50 to-[#fff5ef] rounded-2xl p-4 border border-orange-200 text-left flex items-center justify-between gap-3 shadow-xs">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#ff6b1e] text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                      <Download className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-slate-900">Brochure Downloaded!</p>
+                      <p className="text-xs text-slate-500">Didn&apos;t start automatically?</p>
+                    </div>
+                  </div>
+                  <a
+                    href="/brandmingo-brochure-2026.pdf"
+                    download="Brandmingo-CRM-Brochure-2026.pdf"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-[#ff6b1e] text-[#ff6b1e] text-xs font-bold hover:bg-[#ff6b1e] hover:text-white transition-all shadow-xs whitespace-nowrap"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>Download PDF</span>
+                  </a>
+                </div>
                 <button
                   type="button"
                   onClick={() => setSubmitted(false)}
