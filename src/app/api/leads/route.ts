@@ -38,34 +38,7 @@ export async function POST(req: Request) {
       type: "CRM",
     };
 
-    // 1. Send to Google Sheets Webhook
-    const googleSheetWebhook = 
-      process.env.GOOGLE_SHEET_WEBHOOK_URL || 
-      "https://script.google.com/macros/s/AKfycbz6kPgNw555NUGM33b2_rfP6pV5p8BO_CVy0cVTBThiCZPcHawhIx7r9Pv6MACju-lD/exec";
-    let sheetSynced = false;
-
-    if (googleSheetWebhook && googleSheetWebhook.startsWith("http")) {
-      try {
-        const sheetRes = await fetch(googleSheetWebhook, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(leadRecord),
-          redirect: "follow",
-        });
-
-        if (sheetRes.ok) {
-          sheetSynced = true;
-        } else {
-          console.warn("Google Sheet webhook returned status:", sheetRes.status);
-        }
-      } catch (sheetErr) {
-        console.error("Error pushing lead to Google Sheet webhook:", sheetErr);
-      }
-    }
-
-    // 2. Safe local backup storage so no lead is ever lost
+    // 1. Safe local backup storage first (<2ms, no lead lost)
     try {
       const dataDir = path.join(process.cwd(), "data");
       if (!fs.existsSync(dataDir)) {
@@ -77,16 +50,34 @@ export async function POST(req: Request) {
         const fileContent = fs.readFileSync(leadsFile, "utf-8");
         leads = JSON.parse(fileContent || "[]");
       }
-      leads.unshift({ ...leadRecord, sheetSynced, id: Date.now() });
+      leads.unshift({ ...leadRecord, id: Date.now() });
       fs.writeFileSync(leadsFile, JSON.stringify(leads, null, 2), "utf-8");
     } catch (fsErr) {
       console.error("Error saving lead backup locally:", fsErr);
     }
 
+    // 2. Dispatch to Google Sheets Webhook in background (non-blocking)
+    // Avoids waiting 3-6 seconds for Google Apps Script serverless cold-start & redirect
+    const googleSheetWebhook = 
+      process.env.GOOGLE_SHEET_WEBHOOK_URL || 
+      "https://script.google.com/macros/s/AKfycbz6kPgNw555NUGM33b2_rfP6pV5p8BO_CVy0cVTBThiCZPcHawhIx7r9Pv6MACju-lD/exec";
+
+    if (googleSheetWebhook && googleSheetWebhook.startsWith("http")) {
+      fetch(googleSheetWebhook, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(leadRecord),
+        redirect: "follow",
+      }).catch((sheetErr) => {
+        console.error("Background error pushing lead to Google Sheet webhook:", sheetErr);
+      });
+    }
+
     return NextResponse.json({
       success: true,
       message: "Lead received successfully!",
-      sheetSynced,
     });
   } catch (error) {
     console.error("Error processing lead submission:", error);
