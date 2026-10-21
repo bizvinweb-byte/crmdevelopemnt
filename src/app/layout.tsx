@@ -30,23 +30,39 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://crmdevelopment.in"),
   title: {
-    default: "CRM Development Company India | Custom CRM Software Solutions - crmdevelopment.in",
+    default: "Custom CRM Development Company India | Bespoke CRM Software Solutions",
     template: "%s | crmdevelopment.in",
   },
   description:
-    "Looking for custom CRM development? crmdevelopment.in builds high-performance, bespoke CRM systems, AI workflow automation, and enterprise integrations with zero per-user monthly licensing.",
+    "Top Custom CRM Development Company in India. We engineer bespoke, AI-powered CRM systems, workflow automation & custom APIs with 100% code ownership & zero per-user licensing.",
   keywords: [
-    "crmdevelopment",
     "crm development",
-    "custom crm development",
     "crm development company",
+    "custom crm development",
     "custom crm software india",
     "crm development services",
-    "crm software development",
-    "crm migration services",
-    "enterprise crm solutions",
+    "crm software development company",
+    "crm development company in india",
+    "crm development company in noida",
+    "crm development delhi ncr",
     "bespoke crm developers",
+    "enterprise crm solutions",
+    "ai crm development",
+    "custom crm development company",
+    "salesforce alternative development",
+    "hubspot alternative custom crm",
+    "crm api integration",
+    "crm migration services",
+    "real estate crm development",
+    "healthcare crm software",
+    "b2b custom crm",
+    "crm developers india",
+    "custom crm builders",
+    "lead management crm development",
+    "crmdevelopment",
     "crmdevelopment in",
+    "crmdevelopment.in",
+    "brandmingo crm"
   ],
   authors: [{ name: "crmdevelopment.in Team", url: "https://crmdevelopment.in" }],
   creator: "crmdevelopment.in",
@@ -61,6 +77,12 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  other: {
+    "geo.region": "IN-UP",
+    "geo.placename": "Noida, Sector 62, Delhi NCR",
+    "geo.position": "28.6280;77.3649",
+    "ICBM": "28.6280, 77.3649",
   },
   alternates: {
     canonical: "https://crmdevelopment.in",
@@ -134,6 +156,14 @@ export default function RootLayout({
       "https://twitter.com/crmdevelopment_in",
       "https://github.com/crmdevelopment-in"
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      bestRating: "5",
+      worstRating: "1",
+      ratingCount: "148",
+      reviewCount: "148",
+    },
   };
 
   const websiteSchema = {
@@ -206,6 +236,37 @@ export default function RootLayout({
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://crmdevelopment.in",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Custom CRM Services",
+        item: "https://crmdevelopment.in/#services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Industry CRM Solutions",
+        item: "https://crmdevelopment.in/#industries",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "Contact & Architecture Proposal",
+        item: "https://crmdevelopment.in/contact",
+      },
+    ],
+  };
+
   return (
     <html
       lang="en"
@@ -213,11 +274,12 @@ export default function RootLayout({
     >
       <head>
         {/* Favicons for Browsers & Google Search Crawler */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png?v=3" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=3" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png?v=3" />
+        <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
 
         {/* Structured Data Script Tags for Search Engines */}
         <script
@@ -235,6 +297,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-900 selection:bg-blue-600 selection:text-white">
