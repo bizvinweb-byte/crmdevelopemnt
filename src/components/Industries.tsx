@@ -17,36 +17,42 @@ export default function Industries() {
       name: "Real Estate & PropTech CRM",
       tagline: "Lead allocation, site visit scheduling & automated builder inventory tracking",
       features: ["WhatsApp-integrated lead capture", "Floorplan & unit inventory matrix", "Commission & agent performance tracker"],
+      href: "/industries/real-estate-crm-software",
     },
     {
       icon: Stethoscope,
       name: "Healthcare & Telemedicine CRM",
       tagline: "HIPAA-ready patient records, doctor scheduling & diagnostic follow-ups",
       features: ["Electronic Health Record (EHR) sync", "Prescription & lab test reminders", "Secure telemedicine consultations"],
+      href: "/industries/healthcare-crm-software",
     },
     {
       icon: Landmark,
-      name: "FinTech & Banking CRM",
+      name: "FinTech & B2B Banking CRM",
       tagline: "Loan origination pipelines, KYC validation & wealth management tracking",
       features: ["Aadhaar/PAN KYC automated APIs", "Credit score & underwriting pipelines", "Bank-grade encrypted communications"],
+      href: "/industries/b2b-custom-crm",
     },
     {
       icon: ShoppingBag,
       name: "E-Commerce & D2C Brands",
       tagline: "Customer lifetime value (LTV) cohorts, abandoned cart automation & loyalty points",
       features: ["Shopify/WooCommerce bi-directional sync", "Omnichannel WhatsApp & SMS automation", "RFM customer segmentation"],
+      href: "/services/custom-crm-development",
     },
     {
       icon: Truck,
       name: "Logistics, Cargo & Fleet CRM",
       tagline: "Shipment status, vendor dispatching & real-time delivery GPS triggers",
       features: ["Consignment manifest tracking", "Transporter quotation bidding portal", "Proof-of-delivery (POD) digital signatures"],
+      href: "/services/crm-api-integration",
     },
     {
       icon: GraduationCap,
       name: "EdTech & University Admissions",
       tagline: "Student counselor workflows, campus tour booking & tuition fee collection",
       features: ["Multi-source student inquiry ingestion", "Tele-calling dialer & call recording", "Scholarship & document review portal"],
+      href: "/services/custom-crm-development",
     },
   ];
 
@@ -89,7 +95,9 @@ export default function Industries() {
                     </div>
                     <div className="min-w-0 pt-0.5">
                       <h3 className="text-base font-bold text-slate-900 leading-snug group-hover:text-[#ff6b1e] transition-colors">
-                        {ind.name}
+                        <Link href={ind.href} className="hover:text-[#ff6b1e] transition-colors">
+                          {ind.name}
+                        </Link>
                       </h3>
                       <p className="text-xs text-slate-500 mt-1 leading-relaxed">
                         {ind.tagline}
@@ -107,10 +115,10 @@ export default function Industries() {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href={ind.href}
                   className="text-xs font-semibold text-[#ff6b1e] hover:text-[#e65a12] inline-flex items-center gap-1 pt-3 border-t border-slate-100"
                 >
-                  <span>Build {ind.name.split(" ")[0]} CRM</span>
+                  <span>Explore {ind.name.split(" ")[0]} CRM</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

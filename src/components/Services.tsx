@@ -23,6 +23,7 @@ export default function Services() {
         "Custom reports & analytics",
       ],
       highlight: "Most Popular",
+      href: "/services/custom-crm-development",
     },
     {
       icon: Bot,
@@ -35,6 +36,7 @@ export default function Services() {
         "AI-driven customer insights",
       ],
       highlight: "High ROI",
+      href: "/services/custom-crm-development",
     },
     {
       icon: RefreshCw,
@@ -47,6 +49,7 @@ export default function Services() {
         "Legacy CRM system integration",
       ],
       highlight: "Zero Risk",
+      href: "/services/crm-migration-services",
     },
     {
       icon: Smartphone,
@@ -59,6 +62,7 @@ export default function Services() {
         "Customer data synchronization",
       ],
       highlight: "Field Ready",
+      href: "/contact",
     },
     {
       icon: Workflow,
@@ -71,6 +75,7 @@ export default function Services() {
         "Automated data synchronization",
       ],
       highlight: "Full Stack",
+      href: "/services/crm-api-integration",
     },
     {
       icon: ShieldCheck,
@@ -83,6 +88,7 @@ export default function Services() {
         "Data encryption & recovery",
       ],
       highlight: "Secure",
+      href: "/services/custom-crm-development",
     },
   ];
 
@@ -128,7 +134,9 @@ export default function Services() {
                   </div>
 
                   <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#ff6b1e] transition-colors mb-3">
-                    {service.title}
+                    <Link href={service.href} className="hover:text-[#ff6b1e] transition-colors">
+                      {service.title}
+                    </Link>
                   </h3>
                   <p className="text-sm text-slate-600 leading-relaxed mb-6">
                     {service.description}
@@ -146,10 +154,10 @@ export default function Services() {
                   </ul>
 
                   <Link
-                    href="/contact"
+                    href={service.href}
                     className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-[#ff6b1e] hover:text-[#e65a12] group-hover:translate-x-1 transition-all"
                   >
-                    <span>Get Free Consultation</span>
+                    <span>Explore Solution</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </div>

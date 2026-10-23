@@ -65,6 +65,41 @@ export default function BlogSection() {
 
   const posts: BlogPost[] = [
     {
+      id: "custom-crm-development-cost-in-india",
+      category: "Pricing & ROI",
+      categoryColor: "bg-orange-50 text-[#ff6b1e] border-orange-200",
+      readTime: "7 min read",
+      date: "October 20, 2026",
+      title: "Custom CRM Development Cost in India (2026 Complete Pricing Guide)",
+      excerpt: "Detailed 2026 cost breakdown for building a bespoke CRM in India. Understand MVP vs Enterprise tiers, cloud hosting, and how you save 70% compared to Salesforce.",
+      author: {
+        name: "Rahul Verma",
+        role: "Principal CRM Solutions Architect",
+        avatarText: "RV",
+      },
+      content: {
+        summary: "In India, custom CRM development ranges from ₹2.5 Lakhs for basic MVPs to ₹15 Lakhs+ for enterprise systems with WhatsApp Cloud API, telephony, and AI predictive scoring. Unlike commercial SaaS, you own the IP 100% with zero recurring seat fees.",
+        sections: [
+          {
+            heading: "Commercial SaaS vs Custom CRM 3-Year Cost Comparison",
+            paragraphs: [
+              "A 50-person sales team typically pays ₹67,50,000+ ($81,000) over 3 years on Salesforce Enterprise licenses. A custom CRM costs around ₹9,50,000 once with minimal hosting overhead, saving over ₹55 Lakhs.",
+            ],
+            bullets: [
+              "MVP tier: ₹2.5L - ₹4.5L (3-5 weeks)",
+              "Mid-market tier: ₹5L - ₹12L (6-10 weeks)",
+              "Enterprise tier: ₹15L - ₹35L+ (12-20 weeks)"
+            ]
+          }
+        ],
+        takeaways: [
+          "Zero recurring per-user fees forever.",
+          "Breakeven within 6 to 9 months for 25+ sales reps.",
+          "100% intellectual property asset added to your company."
+        ]
+      }
+    },
+    {
       id: "why-enterprises-abandon-salesforce-hubspot",
       category: "CRM Strategy & ROI",
       categoryColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
@@ -246,7 +281,9 @@ export default function BlogSection() {
 
                 {/* Title */}
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#ff6b1e] transition-colors leading-snug mb-3">
-                  {post.title}
+                  <Link href={`/blog/${post.id}`} className="hover:text-[#ff6b1e] transition-colors">
+                    {post.title}
+                  </Link>
                 </h3>
 
                 {/* Excerpt */}
@@ -271,15 +308,24 @@ export default function BlogSection() {
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => setSelectedPost(post)}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff6b1e] hover:text-[#e65a12] group-hover:translate-x-1 transition-all cursor-pointer"
-                  aria-label={`Read full guide: ${post.title}`}
-                >
-                  <span>Read Guide</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPost(post)}
+                    className="text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors px-2 py-1 cursor-pointer"
+                    aria-label={`Preview guide: ${post.title}`}
+                  >
+                    Preview
+                  </button>
+                  <Link
+                    href={`/blog/${post.id}`}
+                    className="inline-flex items-center gap-1 text-xs font-bold text-[#ff6b1e] hover:text-[#e65a12] group-hover:translate-x-1 transition-all"
+                    aria-label={`Read full guide: ${post.title}`}
+                  >
+                    <span>Read Article</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

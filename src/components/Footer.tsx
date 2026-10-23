@@ -46,33 +46,28 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <Link href="/#services" className="hover:text-[#ff8843] transition-colors">
-                  Custom CRM Software Development
+                <Link href="/services/custom-crm-development" className="hover:text-[#ff8843] transition-colors">
+                  Custom CRM Development
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-[#ff8843] transition-colors">
-                  AI CRM Automation Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-[#ff8843] transition-colors">
-                  CRM Migration & Cloud Solutions
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-[#ff8843] transition-colors">
-                  Custom Mobile CRM App Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-[#ff8843] transition-colors">
+                <Link href="/services/crm-api-integration" className="hover:text-[#ff8843] transition-colors">
                   CRM API Integration Services
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-[#ff8843] transition-colors">
-                  CRM Security & Data Protection
+                <Link href="/services/crm-migration-services" className="hover:text-[#ff8843] transition-colors">
+                  CRM Migration & Cloud Sync
+                </Link>
+              </li>
+              <li>
+                <Link href="/crm-development-company-in-noida" className="hover:text-[#ff8843] transition-colors">
+                  CRM Company in Noida
+                </Link>
+              </li>
+              <li>
+                <Link href="/crm-development-company-delhi-ncr" className="hover:text-[#ff8843] transition-colors">
+                  CRM Developers Delhi NCR
                 </Link>
               </li>
             </ul>
@@ -85,33 +80,28 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <Link href="/#industries" className="hover:text-[#ff8843] transition-colors">
-                  Real Estate CRM Systems
+                <Link href="/industries/real-estate-crm-software" className="hover:text-[#ff8843] transition-colors">
+                  Real Estate CRM Software
                 </Link>
               </li>
               <li>
-                <Link href="/#industries" className="hover:text-[#ff8843] transition-colors">
-                  Healthcare & Telehealth CRM
+                <Link href="/industries/healthcare-crm-software" className="hover:text-[#ff8843] transition-colors">
+                  Healthcare & Clinic CRM
                 </Link>
               </li>
               <li>
-                <Link href="/#industries" className="hover:text-[#ff8843] transition-colors">
-                  FinTech & Banking CRM
+                <Link href="/industries/b2b-custom-crm" className="hover:text-[#ff8843] transition-colors">
+                  B2B Custom CRM Systems
                 </Link>
               </li>
               <li>
-                <Link href="/#industries" className="hover:text-[#ff8843] transition-colors">
-                  E-Commerce & Retail CRM
+                <Link href="/blog/custom-crm-development-cost-in-india" className="hover:text-[#ff8843] transition-colors">
+                  Custom CRM Cost Guide
                 </Link>
               </li>
               <li>
-                <Link href="/#industries" className="hover:text-[#ff8843] transition-colors">
-                  Logistics & Cargo CRM
-                </Link>
-              </li>
-              <li>
-                <Link href="/#industries" className="hover:text-[#ff8843] transition-colors">
-                  EdTech Admissions CRM
+                <Link href="/blog/why-enterprises-abandon-salesforce-hubspot" className="hover:text-[#ff8843] transition-colors">
+                  Salesforce vs Custom CRM
                 </Link>
               </li>
             </ul>
@@ -144,6 +134,87 @@ export default function Footer() {
             </ul>
           </div>
 
+        </div>
+
+        {/* Popular Searches & Regional Architecture Hubs (White-Hat SEO Internal Linking) */}
+        <div className="py-8 border-t border-slate-900/80 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider">
+              Trending CRM Solutions &amp; Regional Hubs
+            </span>
+            <span className="text-[10px] text-slate-500">
+              Direct Access to Dedicated Enterprise Architectural Blueprints
+            </span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2">
+            <Link 
+              href="/services/custom-crm-development" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              Custom CRM Development Company
+            </Link>
+            <Link 
+              href="/crm-development-company-in-noida" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              CRM Company in Noida Sector 62
+            </Link>
+            <Link 
+              href="/crm-development-company-delhi-ncr" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              CRM Developers Delhi NCR &amp; Gurgaon
+            </Link>
+            <Link 
+              href="/industries/real-estate-crm-software" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              Real Estate &amp; Builder CRM
+            </Link>
+            <Link 
+              href="/services/crm-api-integration" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              WhatsApp Cloud API CRM Integration
+            </Link>
+            <Link 
+              href="/blog/custom-crm-development-cost-in-india" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              Custom CRM Cost in India (2026 Guide)
+            </Link>
+            <Link 
+              href="/services/crm-migration-services" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              Salesforce &amp; HubSpot Migration
+            </Link>
+            <Link 
+              href="/industries/healthcare-crm-software" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              Healthcare &amp; Patient CRM Software
+            </Link>
+            <Link 
+              href="/industries/b2b-custom-crm" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              B2B Lead Management CRM
+            </Link>
+            <Link 
+              href="/blog/ai-driven-sales-automation-predictive-scoring" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              AI Predictive Deal Scoring
+            </Link>
+            <Link 
+              href="/blog/why-enterprises-abandon-salesforce-hubspot" 
+              className="text-[11px] text-slate-400 hover:text-[#ff8843] bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 px-3 py-1 rounded-lg transition-colors"
+            >
+              Salesforce vs Bespoke CRM ROI
+            </Link>
+          </div>
         </div>
 
         {/* Bottom copyright and SEO Keyword cluster text */}

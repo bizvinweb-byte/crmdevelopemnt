@@ -28,7 +28,7 @@ export default function Navbar() {
     { name: "Services", href: "/#services" },
     { name: "Industries", href: "/#industries" },
     { name: "Why Custom CRM", href: "/#why-us" },
-    { name: "Process", href: "/#process" },
+    { name: "Cost Guide", href: "/blog/custom-crm-development-cost-in-india" },
     { name: "Contact Us", href: "/contact" },
   ];
 
